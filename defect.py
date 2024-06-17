@@ -4,7 +4,7 @@
 
 # Randomly splits images to 80% train, 10% validation, and 10% test, and moves them to their respective folders. 
 # This script is intended to be used in the TFLite Object Detection Colab notebook here:
-# https://colab.research.google.com/github/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi/blob/master/Train_TFLite2_Object_Detction_Model.ipynb
+
 
 from pathlib import Path
 import random
@@ -12,7 +12,10 @@ import os
 import sys
 
 # Define paths to image folders
-test_path = '/content/drive/MyDrive/Dataset/Automated_Defect_detector/test'
+image_path = '/content/drive/MyDrive/Dataset/Images'
+train_path = '/content/drive/MyDrive/Dataset/Images/train'
+val_path = '/content/drive/MyDrive/Dataset/Images/validation'
+test_path = '/content/drive/MyDrive/Dataset/Images/test'
 
 # Get list of all images
 jpeg_file_list = [path for path in Path(image_path).rglob('*.jpeg')]
@@ -31,6 +34,8 @@ file_num = len(file_list)
 print('Total images: %d' % file_num)
 
 # Determine number of files to move to each folder
+train_percent = 0.8  # 80% of the files go to train
+val_percent = 0.1 # 10% go to validation
 test_percent = 0.1 # 10% go to test
 train_num = int(file_num*train_percent)
 val_num = int(file_num*val_percent)
