@@ -12,10 +12,10 @@ import os
 import sys
 
 # Define paths to image folders
-image_path = '/content/drive/MyDrive/Dataset/Images'
-train_path = '/content/drive/MyDrive/Dataset/Images/train'
-val_path = '/content/drive/MyDrive/Dataset/Images/validation'
-test_path = '/content/drive/MyDrive/Dataset/Images/test'
+image_path = '/content/drive/MyDrive/Dataset/images'
+train_path = '/content/drive/MyDrive/Dataset/images/train'
+val_path = '/content/drive/MyDrive/Dataset/images/validation'
+test_path = '/content/drive/MyDrive/Dataset/images/test'
 
 # Get list of all images
 jpeg_file_list = [path for path in Path(image_path).rglob('*.jpeg')]
